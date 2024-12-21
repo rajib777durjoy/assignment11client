@@ -9,7 +9,7 @@ const Navbar = () => {
      <li className='mx-2 font-medium text-lg'><NavLink to='/borrowed'>Borrowed</NavLink></li>      
     </>
     return (
-        <div className="navbar bg-slate-500 text-blue-400">
+        <div className="navbar bg-slate-500 text-blue-400 z-40">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -32,7 +32,7 @@ const Navbar = () => {
               {Items}
             </ul>
           </div>
-          <span className="md:text-2xl text-white font-extrabold">Chapter<span className='text-blue-400'>Vault</span></span>
+          <a className="btn btn-ghost text-2xl text-white font-extrabold">Chapter<span className='text-blue-400'>Vault</span></a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
