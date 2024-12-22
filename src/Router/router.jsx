@@ -6,6 +6,9 @@ import Home from '../Pages/Home/Home'
 import Allbook from '../Pages/Allbook/Allbook';
 import Addbook from '../Pages/Addbook/Addbook';
 import Borrowed from '../Pages/Borrowed/Borrowed';
+import Login from '../Authentication/Login';
+import Register from '../Authentication/Register';
+import Privetroute from '../PrivetRoute/Privetroute';
 
 const router= createBrowserRouter([
     {
@@ -19,16 +22,25 @@ const router= createBrowserRouter([
         },
         {
           path:'/allbook',
-          element:<Allbook></Allbook>
+          element:<Privetroute><Allbook></Allbook></Privetroute>
         },
         {
             path:'/addbook',
-            element:<Addbook></Addbook>
+            element:<Privetroute><Addbook></Addbook></Privetroute>
         },
         {
             path:'/borrowed',
-            element:<Borrowed></Borrowed>
+            element:<Privetroute><Borrowed></Borrowed></Privetroute>
         },
+        {
+          path:'/login',
+          element:<Login></Login>
+        },
+        {
+          path:'register',
+          element:<Register></Register>
+        }
+
       ]
     },
   ]); 
