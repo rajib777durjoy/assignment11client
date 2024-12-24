@@ -9,6 +9,9 @@ import Borrowed from '../Pages/Borrowed/Borrowed';
 import Login from '../Authentication/Login';
 import Register from '../Authentication/Register';
 import Privetroute from '../PrivetRoute/Privetroute';
+import Bookdetails from '../Pages/BookDetails/Bookdetails';
+import Updatepage from '../Pages/Update/Updatepage';
+import Bookdisplay from '../Pages/BookDisplay/Bookdisplay';
 
 const router= createBrowserRouter([
     {
@@ -21,8 +24,21 @@ const router= createBrowserRouter([
          element:<Home></Home>
         },
         {
+          path:'/bookDisplay/:category',
+          element:<Bookdisplay></Bookdisplay>
+
+        },
+        {
+         path:'/detailspage',
+         element:<Bookdetails></Bookdetails>
+        },
+        {
           path:'/allbook',
           element:<Privetroute><Allbook></Allbook></Privetroute>
+        },
+        {
+          path:'/updatepage/:id',
+          element:<Updatepage></Updatepage>
         },
         {
             path:'/addbook',

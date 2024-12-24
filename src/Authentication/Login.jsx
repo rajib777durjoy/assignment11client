@@ -3,9 +3,13 @@ import React, { useContext } from 'react';
 import loginanimi from '../assets/loginAnimation.json'
 import { Authcontext } from '../Authprovider/Authprovider';
 import { Link, useNavigate } from 'react-router-dom';
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { toast } from 'react-toastify';
+import { auth } from '../Firebase/firebase';
+
 const Login = () => {
  const {createLogin}=useContext(Authcontext)
+ const provider = new GoogleAuthProvider();
  const navigate=useNavigate()
  const handelloginsubmit=(e)=>{
     e.preventDefault()
@@ -20,8 +24,21 @@ const Login = () => {
         toast.success('Login Successfull')
         navigate('/')
     })
-
+ 
    } 
+   const handelgoogle=()=>{
+   
+    signInWithPopup(auth, provider)
+    .then(res=>{
+        navigate('/')
+    })
+    .catch(error=>{
+       
+    })
+
+
+  }
+
     return (
         <div className="hero bg-blue-950 min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
@@ -48,9 +65,13 @@ const Login = () => {
                         </div>
                         <div className="form-control mt-6">
                             <button type='submit' className="btn bg-blue-950 text-white">Login</button>
-                            <button className='btn w-[100%] my-2 bg-blue-950 text-white'>Google</button>
+
                         </div>
                     </form>
+                    <div className='w-[90%] mx-auto'>
+                    <button onClick={handelgoogle} className='btn w-[100%] my-2 bg-blue-950 text-white'>Google</button>
+                    </div>
+                   
                     <div className='text-center mb-5'>Don't have an account? <Link to='/register' className='text-blue-500 font-medium'>Register</Link></div>
                 </div>
             </div>

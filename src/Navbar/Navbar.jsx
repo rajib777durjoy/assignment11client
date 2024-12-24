@@ -65,7 +65,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end gap-2">
           {
-            user?<div className='flex gap-2 items-center'><span>{(user.photoURL)?.slice(0,30)}</span><button onClick={signout} className='btn'>SignOut</button></div>:<div className='flex gap-2'>
+            user?<div className='flex gap-2 items-center'><span>{(user.photoURL)?.slice(0,30)}</span><button onClick={signout} className='btn border-0 bg-blue-950 text-white'>SignOut</button></div>:<div className='flex gap-2'>
                <NavLink to='/login'><button className='btn bg-blue-950 text-white  border-0'>Login</button></NavLink>
                <NavLink to='register'><button className='btn bg-blue-950 text-white  border-0'>Register</button></NavLink>
             </div>

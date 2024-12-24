@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from '../../Component/Banner/Banner';
+import Bookcategories from '../../Component/BookCategories/Bookcategories';
 
 const Home = () => {
     return (
@@ -7,7 +8,9 @@ const Home = () => {
           <div>
             <Banner></Banner>
           </div>
-
+           <div>
+              <Bookcategories></Bookcategories>
+           </div>
         </div>
     );
 };
