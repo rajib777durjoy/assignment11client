@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useParams, useSearchParams } from 'react-router-dom';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 
 const Bookdisplay = () => {
     const [books, setbooks] = useState([])
@@ -11,9 +11,9 @@ const Bookdisplay = () => {
             setbooks(res.data)
         })
     return (
-        <div className='text-white'>
+        <div className='text-white grid md:grid-cols-3 lg:grid-cols-4 gap-4'>
             {
-                books.map(book => <div className="card card-compact text-black bg-base-100 w-96 shadow-xl">
+                books.map(book =><div className="card card-compact text-black bg-base-100 h-[350px] shadow-xl">
                     <figure>
                         <img
                             src={book?.image}
@@ -25,8 +25,8 @@ const Bookdisplay = () => {
                         <p>{book?.category}</p>
                         <p>{book?.quantity}</p>
                         <p>{book?.rating}</p>
-                        <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Details</button>
+                        <div className="card-actions justify-center">
+                           <Link to='/detailspage'><button className="btn btn-primary">Details</button></Link>
                         </div>
                     </div>
                 </div>

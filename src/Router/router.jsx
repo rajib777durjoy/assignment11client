@@ -23,10 +23,10 @@ const router= createBrowserRouter([
          index:true,
          element:<Home></Home>
         },
+        
         {
           path:'/bookDisplay/:category',
           element:<Bookdisplay></Bookdisplay>
-
         },
         {
          path:'/detailspage',
