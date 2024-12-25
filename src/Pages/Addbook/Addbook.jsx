@@ -1,18 +1,22 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
+import { Authcontext } from '../../Authprovider/Authprovider';
 
 const Addbook = () => {
+const {user}=useContext(Authcontext)
 const handeladdbookinfo=(e)=>{
     e.preventDefault()
     const form=e.target;
     const bookdata=new FormData(form);
-    const bookInfo=Object.fromEntries(bookdata.entries())
+    let bookInfo=Object.fromEntries(bookdata.entries())
+    const bookDetails={...bookInfo,userEmail:user?.email}
+  
     if(bookInfo?.rating>5){
         return toast.error('rating number maximum 5')
     }
-    console.log(bookInfo)
-    axios.post(`${import.meta.env.VITE_localhostUrl}/addbook`,bookInfo)
+   
+    axios.post(`${import.meta.env.VITE_localhostUrl}/addbook`,bookDetails)
     .then(res=>{
         toast.success("Book Add Successfull")
     })

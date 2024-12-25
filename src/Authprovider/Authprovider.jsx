@@ -2,8 +2,8 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndP
 import React, { createContext, useEffect, useState } from 'react';
 import { auth } from '../Firebase/firebase';
 import { useSearchParams } from 'react-router-dom';
-export const Authcontext=createContext()
 
+export const Authcontext=createContext()
 const Authprovider = ({children}) => {
     const [user,setuser]=useState([])
     const [loader,setloader]=useState(true)
