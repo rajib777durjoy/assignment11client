@@ -33,16 +33,13 @@ const Allbook = () => {
     const handelFilter = () => {
         axios.get(`${import.meta.env.VITE_localhostUrl}/books/filter`)
             .then(res => {
-                // console.log(res.data)
+                
                 setbook(res.data)
             })
     }
-
-
-    console.log(search)
     return (
         <div className='w-[90%] mx-auto min-h-screen'>
-            <div className='w-[100%] p-3 items-center border-2 border-teal-300 grid grid-cols-3 gap-2 '>
+            <div className='w-[100%] p-3 items-center border-2 border-white grid grid-cols-3 gap-2 '>
                 <div className=' h-[50px] border-0 rounded-lg bg-slate-300  text-white '>
                     <button onClick={handelFilter} className='w-[100%] border-0  btn'>Filter quantity</button>
                 </div>
@@ -80,10 +77,10 @@ const Allbook = () => {
                                 alt="Shoes" className='w-[270px] h-[200px] rounded-lg' />
                         </figure>
                         <div className="w-[90%] mx-auto">
-                            <h2 className="card-title">{book?.name}</h2>
-                            <p>{book?.authorName}</p>
-                            <h2>{book?.category}</h2>
-                            <h2><ReactStars
+                            <h2 className="card-title"><span className='text-xl font-medium'>Name:</span>{book?.name}</h2>
+                            <p><span className='text-xl font-medium'>AuthorName:</span> {book?.authorName}</p>
+                            <h2><span className='text-xl font-medium'>Category:</span> {book?.category}</h2>
+                            <h2 className='flex items-center gap-2'><span className='text-xl font-medium'>Rating:</span> <ReactStars
                                 count={book?.rating}
                                 size={24}
                                 color="#ffd700"
@@ -93,16 +90,16 @@ const Allbook = () => {
                                 <Link to={`/updatepage/${book?._id}`}><button className="btn btn-primary w-[100%]">Update</button></Link>
                             </div>
                         </div>
-                    </div> : <table className="table"><thead>
+                    </div> : <table className="table bg-base-200 text-black"><thead>
                         <tr>
                             <th>
                                 <label>
                                     <input type="checkbox" className="checkbox" />
                                 </label>
                             </th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Name and Author Name</th>
+                            <th>Category</th>
+                            <th>Rating</th>
                             <th></th>
                         </tr>
                     </thead> <tbody>
