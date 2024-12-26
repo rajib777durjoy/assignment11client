@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import { auth } from '../Firebase/firebase';
 import { useSearchParams } from 'react-router-dom';
@@ -16,29 +16,32 @@ const Authprovider = ({children}) => {
     setloader(true)
    return signInWithEmailAndPassword(auth,email,password)
   }
+  const singoutfun=()=>{
+    setloader(true)
+   return signOut(auth)
+  }
+
+
  useEffect(()=>{
    const unSubcribe= onAuthStateChanged(auth,currentuser=>{
+        setuser(currentuser)
        
-        const userEmail={currentuserEmail:currentuser?.email}
-        console.log(userEmail)
-        setloader(false)
         if(currentuser?.email){
-          setuser(currentuser)
-          
+          const userEmail={email:currentuser?.email}
           axios.post(`${import.meta.env.VITE_localhostUrl}/jwt`,userEmail,{
             withCredentials:true
           })
           .then(res=>{
-            // setloader(false)
             console.log(res.data)
+            setloader(false)
           })
         }
         else{
           axios.post(`${import.meta.env.VITE_localhostUrl}/logout`,{},{
             withCredentials:true
           }).then(res=>{
-            // setloader(false)
             console.log('logout',res.data)
+            setloader(false)
           })
         }
        
@@ -51,7 +54,8 @@ const Authprovider = ({children}) => {
        createRegister,
        createLogin,
        user,
-       loader
+       loader,
+       singoutfun
     }
     return (
         <Authcontext.Provider value={authinfo}>

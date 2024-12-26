@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import { Authcontext } from '../Authprovider/Authprovider';
 import { signOut } from 'firebase/auth';
 import { auth } from '../Firebase/firebase';
 
 const Navbar = () => {
-  const {user}=useContext(Authcontext)
-  const navigatelogin=useNavigate()
+  const {user,singoutfun}=useContext(Authcontext)
+  // const navigatelogin=useNavigate()
     const Items=<>
      <li className='mx-2 font-medium text-lg'><NavLink to='/'>Home</NavLink></li>      
      <li className='mx-2 font-medium text-lg'><NavLink to='/allbook'>All Book</NavLink></li>      
@@ -14,9 +14,12 @@ const Navbar = () => {
      <li className='mx-2 font-medium text-lg'><NavLink to='/borrowed'>Borrowed</NavLink></li>      
     </>
     const signout=()=>{
-      signOut(auth).then(()=>{
-          console.log('successfull')
-          navigatelogin('/login')
+      // signOut(auth).then(()=>{
+      //   
+      // })
+      singoutfun().then(()=>{
+        console.log('successfull')
+            // navigatelogin('/login')
       })
     }
     return (
