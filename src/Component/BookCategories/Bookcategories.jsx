@@ -5,7 +5,7 @@ const Bookcategories = () => {
     return (
         <div className='grid grid-cols-4 gap-4 mx-2 h-[200px] items-center'>
            <Link to='/bookDisplay/Computer Science'>
-            <div className=" h-[150px] border-2 rounded-lg">
+            <div className=" h-[150px] border-2 rounded-lg bg-white ">
                 <h1 className=' text-xl text-center mt-4'>Category</h1>
                  <h2 className=' text-center'>Computer Science</h2>
                  
