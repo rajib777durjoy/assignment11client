@@ -1,8 +1,19 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1.Project Name:ChapterVault
+2.Purpose:My project is Booklibrary. Here you can see which readers have borrowed which books and books have been posted.But no one except the login user can see the borrowed books.No one can login without a verified user.
+3.Live URL:
+4.key features:
+ *Add Button:Its function is that the user can post the book he likes.
+ *Category:User can view and borrow books according to their category.
+ *Borrowed page: (return button ) The function of the return button is that the book will be returned after the specified time of borrowing.
+ 5.NPM packages:
+  *swiper
+  *react-toastify
+  *react-toastify
+  *react-rating-stars-component
+  *react-icons
+  *react-hook-form
+  *react-datepicker
+  *react-countup
+  *lottie-react
+  *axios
+  *date-fns

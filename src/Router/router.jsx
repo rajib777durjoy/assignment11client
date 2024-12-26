@@ -29,8 +29,8 @@ const router= createBrowserRouter([
           element:<Bookdisplay></Bookdisplay>
         },
         {
-         path:'/detailspage',
-         element:<Bookdetails></Bookdetails>
+         path:'/detailspage/:id',
+         element:<Privetroute><Bookdetails></Bookdetails></Privetroute>
         },
         {
           path:'/allbook',

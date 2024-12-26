@@ -20,15 +20,15 @@ const Register = () => {
         updateProfile(auth.currentUser,{
             displayName:forminfo?.name,
             photoURL:forminfo?.photo
-        }).then(()=>{
-            console.log('update profile successfull',)
         })
         navigetHome('/')
+       
        })
        const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
    
        if(!regex.test(forminfo?.password)){
-          return 
+           toast.error('please vaild password')
+           return ;
        }
     } 
     return (

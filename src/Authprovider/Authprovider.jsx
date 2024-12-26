@@ -2,6 +2,7 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndP
 import React, { createContext, useEffect, useState } from 'react';
 import { auth } from '../Firebase/firebase';
 import { useSearchParams } from 'react-router-dom';
+import axios from 'axios';
 
 export const Authcontext=createContext()
 const Authprovider = ({children}) => {
@@ -17,9 +18,30 @@ const Authprovider = ({children}) => {
   }
  useEffect(()=>{
    const unSubcribe= onAuthStateChanged(auth,currentuser=>{
-        console.log('currentuser id',currentuser)
-        setuser(currentuser)
+       
+        const userEmail={currentuserEmail:currentuser?.email}
+        console.log(userEmail)
         setloader(false)
+        if(currentuser?.email){
+          setuser(currentuser)
+          
+          axios.post(`${import.meta.env.VITE_localhostUrl}/jwt`,userEmail,{
+            withCredentials:true
+          })
+          .then(res=>{
+            // setloader(false)
+            console.log(res.data)
+          })
+        }
+        else{
+          axios.post(`${import.meta.env.VITE_localhostUrl}/logout`,{},{
+            withCredentials:true
+          }).then(res=>{
+            // setloader(false)
+            console.log('logout',res.data)
+          })
+        }
+       
     })
     return ()=>{
        unSubcribe()

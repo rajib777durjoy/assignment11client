@@ -10,6 +10,9 @@ const handeladdbookinfo=(e)=>{
     const form=e.target;
     const bookdata=new FormData(form);
     let bookInfo=Object.fromEntries(bookdata.entries())
+    // console.log(bookInfo)
+    bookInfo.quantity=Number(bookInfo?.quantity)
+    console.log(bookInfo)
     const bookDetails={...bookInfo,userEmail:user?.email}
   
     if(bookInfo?.rating>5){
@@ -41,7 +44,7 @@ const handeladdbookinfo=(e)=>{
                     <label className="label">
                         <span className="label-text">Quantity</span>
                     </label>
-                    <input type="text" name='quantity' placeholder="Quantity" className="input input-bordered" required />
+                    <input type='number' name='quantity' placeholder="Quantity" className="input input-bordered" required />
                 </div>
                 <div className="form-control">
                     <label className="label">

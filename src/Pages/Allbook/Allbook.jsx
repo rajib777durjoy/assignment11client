@@ -28,12 +28,11 @@ const Allbook = () => {
             .then(res => {
                 setbook(res.data)
             })
-    }, [search])
+    },[])
 
     const handelFilter = () => {
         axios.get(`${import.meta.env.VITE_localhostUrl}/books/filter`)
             .then(res => {
-                
                 setbook(res.data)
             })
     }

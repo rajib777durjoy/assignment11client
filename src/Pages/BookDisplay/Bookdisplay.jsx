@@ -26,7 +26,7 @@ const Bookdisplay = () => {
                         <p>{book?.quantity}</p>
                         <p>{book?.rating}</p>
                         <div className="card-actions justify-center">
-                           <Link to='/detailspage'><button className="btn btn-primary">Details</button></Link>
+                           <Link to={`/detailspage/${book?._id}`}><button className="btn btn-primary">Details</button></Link>
                         </div>
                     </div>
                 </div>
