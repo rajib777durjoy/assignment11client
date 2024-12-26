@@ -36,7 +36,7 @@ const Bookdetails = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (event) => {
          // Form data will be logged here
-        const data={...event,image:bookdetails?.image,startDate,category:bookdetails?.category,bookId:bookdetails?._id,borrowdate:new Date()}
+        const data={...event,title:bookdetails?.name,image:bookdetails?.image,startDate,category:bookdetails?.category,bookId:bookdetails?._id,borrowdate:new Date()}
         axios.post(`${import.meta.env.VITE_localhostUrl}/borrowedbook`,data)
         .then(res=>{
             console.log('submit successfull')

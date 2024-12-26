@@ -39,7 +39,7 @@ const Borrowed = () => {
                         alt="Shoes" className='h-[200px] w-[80%] mx-auto my-2 rounded-lg' />
                     </figure>
                     <div className="card-body">
-                      <h2 className="card-title">Title:{book?.name}</h2>
+                      <h2 className="card-title">Title:{book?.title}</h2>
                       <p className='text-xl'><span className='text-xl font-bold'>Category:</span>{book?.category}</p>
                       <h2>BorrowedDate:{book?.borrowdate}</h2>
                       <h2>ReturnDate:{book?.startDate}</h2>
