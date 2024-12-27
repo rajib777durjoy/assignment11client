@@ -51,11 +51,11 @@ const Bookdetails = () => {
     // console.log(bookdetails)
     return (
         <div className='w-[90%] mx-auto min-h-[500px] text-black'>
-            <div className="card card-compact bg-base-100 w-96 shadow-xl">
+            <div className="card card-compact bg-base-100 w-[50%] mx-auto shadow-xl">
                 <figure>
                     <img
                         src={bookdetails?.image}
-                        alt="Shoes"/>
+                        alt="Shoes" className='w-[80%] mx-auto h-[200px] my-2' />
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title">{bookdetails?.name}</h2>

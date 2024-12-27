@@ -27,7 +27,7 @@ const handeladdbookinfo=(e)=>{
 }
     return (
         <div className='w-[90%] mx-auto'>
-            <form onSubmit={handeladdbookinfo} className="card-body w-[70%] mx-auto">
+            <form onSubmit={handeladdbookinfo} className="card-body w-[100%] md:w-[70%] mx-auto">
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Image</span>

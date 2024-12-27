@@ -44,13 +44,19 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content justify-center bg-base-100 rounded-box z-50  mt-3 w-52 p-2 shadow">
               {Items}
-              {
+              {/* {
                 user?'':<div className='flex flex-col gap-2 ms-4'>
                 <NavLink to='/login'><button className='btn bg-blue-950  text-white  border-0'>Login</button></NavLink>
                 <NavLink to='register'><button className='btn bg-blue-950 text-white  border-0'>Register</button></NavLink>
                 </div>
               
-              }
+              } */}
+               {
+            user?<div className='flex flex-col gap-2 items-start'><span>{(user.photoURL)?.slice(0,30)}</span><button onClick={signout} className='btn border-0 bg-blue-950 text-white'>SignOut</button></div>:<div className='flex gap-2'>
+               <NavLink to='/login'><button className='btn bg-blue-950 text-white  border-0'>Login</button></NavLink>
+               <NavLink to='register'><button className='btn bg-blue-950 text-white  border-0'>Register</button></NavLink>
+            </div>
+          }
               
             </ul>
           </div>
@@ -62,13 +68,11 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
            {Items}
-          
-           
           </ul>
         </div>
         <div className="navbar-end gap-2">
           {
-            user?<div className='flex gap-2 items-center'><span>{(user.photoURL)?.slice(0,30)}</span><button onClick={signout} className='btn border-0 bg-blue-950 text-white'>SignOut</button></div>:<div className='flex gap-2'>
+            user?<div className='flex gap-2 items-center'><span className='hidden md:flex'>{(user.photoURL)?.slice(0,30)}</span><button onClick={signout} className='btn border-0 bg-blue-950 text-white'>SignOut</button></div>:<div className='flex gap-2'>
                <NavLink to='/login'><button className='btn bg-blue-950 text-white  border-0'>Login</button></NavLink>
                <NavLink to='register'><button className='btn bg-blue-950 text-white  border-0'>Register</button></NavLink>
             </div>
