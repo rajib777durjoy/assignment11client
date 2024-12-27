@@ -8,18 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
 import { Authcontext } from '../../Authprovider/Authprovider';
 import { toast } from 'react-toastify';
-// {
-//     "_id": "676c281066a434ab69498d19",
-//     "image": "https://www.keqoh.cc",
-//     "name": "Merritt Carr",
-//     "quantity": "26",
-//     "authorName": "Madeline Anthony",
-//     "category": "Computer Science",
-//     "description": "Ex odit quidem solut",
-//     "rating": "1",
-//     "bookcontent": "Ad numquam pariatur",
-//     "userEmail": "durjoy2001chando@gmail.com"
-// }
+
 const Bookdetails = () => {
     const { id } = useParams()
     const [bookdetails, setbookdetails] = useState([])
@@ -45,6 +34,12 @@ const Bookdetails = () => {
             return toast.success('Borrod book Successfull')
            }
         })
+       .catch(error=>{
+       if(error.message){
+        document.getElementById('my_modal_5').close()
+        toast.error(error.message)
+       }
+       })
        
       };
 

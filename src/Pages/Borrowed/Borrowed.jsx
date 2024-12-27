@@ -2,27 +2,30 @@ import React, { useContext, useEffect, useState } from 'react';
 import UseAxios from '../../Authentication/UseAxios';
 import { Authcontext } from '../../Authprovider/Authprovider';
 import { toast } from 'react-toastify';
-// import axios from 'axios';
+
+
+
 
 const Borrowed = () => {
     const{user}=useContext(Authcontext)
     const [books,setbooks]=useState([])
+  
     const axiosSecure=UseAxios()
     useEffect(()=>{
-      axiosSecure.get(`http://localhost:5000/borrowedlist?user=${user?.email}`)
+     axiosSecure.get(`${import.meta.env.VITE_localhostUrl}/borrowedlist?user=${user?.email}`)
       .then(res=>{
-        console.log(res)
+        
          setbooks(res.data)
       }) 
     },[user?.email])
     const handelReturnfun=(id)=>{
-        console.log('hello world')
+       
         fetch(`${import.meta.env.VITE_localhostUrl}/borrowedbook/${id}`,{
             method:'DELETE'
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log(data)
+           
           const deletebook=books.filter(book=>book?._id !== id)
           setbooks(deletebook)
             if(data.deletedCount>0){
@@ -30,7 +33,7 @@ const Borrowed = () => {
             }
         })
     }
-    console.log(books)
+ 
     return (
         <div className=' w-[90%] mx-auto gap-4 grid md:grid-cols-3 min-h-screen my-4'>
             {
