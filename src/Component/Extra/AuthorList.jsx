@@ -10,10 +10,9 @@ const AuthorList = () => {
                         alt="Movie" className='w-[90%] mx-auto h-[200px]' />
                 </figure>
                 <div className="card-body">
-                    <h2 className="card-title">New movie is released!</h2>
-                    <p>Click the button to watch on Jetflix app.</p>
+                    <h2 className="card-title">Thomas H. Cormen</h2>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Watch</button>
+                        <button className="btn btn-primary">More</button>
                     </div>
                 </div>
             </div>
@@ -24,10 +23,9 @@ const AuthorList = () => {
                         alt="Movie" className='w-[100%] h-[200px]'/>
                 </figure>
                 <div className="card-body">
-                    <h2 className="card-title">New movie is released!</h2>
-                    <p>Click the button to watch on Jetflix app.</p>
+                    <h2 className="card-title">Susan Standring</h2>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Watch</button>
+                        <button className="btn btn-primary">More</button>
                     </div>
                 </div>
             </div>
@@ -38,10 +36,9 @@ const AuthorList = () => {
                         alt="Movie" className='w-[100%] h-[200px] ' />
                 </figure>
                 <div className="card-body">
-                    <h2 className="card-title">New movie is released!</h2>
-                    <p>Click the button to watch on Jetflix app.</p>
+                    <h2 className="card-title">Benjemin Graham</h2>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Watch</button>
+                        <button className="btn btn-primary">More</button>
                     </div>
                 </div>
             </div>
@@ -52,10 +49,10 @@ const AuthorList = () => {
                         alt="Movie" className='w-[100%] h-[200px]' />
                 </figure>
                 <div className="card-body">
-                    <h2 className="card-title">New movie is released!</h2>
-                    <p>Click the button to watch on Jetflix app.</p>
+                    <h2 className="card-title">Paulo Coelho</h2>
+                    
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Watch</button>
+                        <button className="btn btn-primary">More</button>
                     </div>
                 </div>
             </div>
