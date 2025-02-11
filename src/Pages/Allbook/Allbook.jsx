@@ -1,26 +1,16 @@
-import axios from 'axios';
+
 import React, { useEffect, useState } from 'react';
 // import { set } from 'react-hook-form';
 import ReactStars from "react-rating-stars-component";
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
-// {
-//     "_id": "6769799ff9536e1e5d121e00",
-//     "image": "https://i.ibb.co.com/PGz6rtb/jsbook.jpg",
-//     "name": "JavaScript",
-//     "quantity": "2",
-//     "authorName": "Jhankar Mahabub",
-//     "category": "Computer Science",
-//     "description": "this book for web development flatform students",
-//     "rating": "5",
-//     "bookcontent": "I love this book . JavaScript learn too easy."
-// }
 const Allbook = () => {
     const [books, setbook] = useState([])
     const [toggle, settoggle] = useState(true)
     const [search,setsearchValue]=useState('')
-    const updatepage = useNavigate()
+    const updatepage = useNavigate();
     const { _id, name, image, quantity, authorName, category, description, rating, bookcontent } = books
 
     useEffect(() => {
@@ -85,7 +75,7 @@ const Allbook = () => {
                                 color="#ffd700"
                                 edit={false}
                             /></h2>
-                            <div className="card-actions justify-center mt-4">
+                            <div className="card-actions justify-center my-4">
                                 <Link to={`/updatepage/${book?._id}`}><button className="btn btn-primary w-[100%]">Update</button></Link>
                             </div>
                         </div>

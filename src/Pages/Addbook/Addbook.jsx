@@ -2,9 +2,11 @@ import axios from 'axios';
 import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { Authcontext } from '../../Authprovider/Authprovider';
+import UseAxios from '../../Authentication/UseAxios';
 
 const Addbook = () => {
 const {user}=useContext(Authcontext)
+const axiosInst=UseAxios()
 const handeladdbookinfo=(e)=>{
     e.preventDefault()
     const form=e.target;
@@ -19,8 +21,9 @@ const handeladdbookinfo=(e)=>{
         return toast.error('rating number maximum 5')
     }
    
-    axios.post(`${import.meta.env.VITE_localhostUrl}/addbook`,bookDetails)
+    axiosInst.post(`${import.meta.env.VITE_localhostUrl}/addbook`,bookDetails)
     .then(res=>{
+        console.log('add book',res)
         toast.success("Book Add Successfull")
     })
    

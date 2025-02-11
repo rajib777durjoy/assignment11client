@@ -25,7 +25,7 @@ const Authprovider = ({children}) => {
  useEffect(()=>{
    const unSubcribe= onAuthStateChanged(auth,currentuser=>{
         setuser(currentuser)
-       
+        setloader(false)
         if(currentuser?.email){
           const userEmail={email:currentuser?.email}
           axios.post(`${import.meta.env.VITE_localhostUrl}/jwt`,userEmail,{
@@ -33,7 +33,7 @@ const Authprovider = ({children}) => {
           })
           .then(res=>{
             console.log(res.data)
-            setloader(false)
+            // setloader(false)
           })
         }
         else{

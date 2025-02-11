@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer';
 
 const Mainlayout = () => {
     return (
-        <div className='w-[100%]  min-h-screen border-2 border-red-500 bg-blue-950'>
+        <div className='w-[100%]  min-h-screen  bg-blue-950'>
             <header>
             <Navbar></Navbar>
             </header>

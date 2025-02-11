@@ -2,8 +2,8 @@ import React from 'react';
 
 const AuthorList = () => {
     return (
-        <div className='w-[100%]  min-h-[500px] grid gap-3 md:grid-cols-2 lg:grid-cols-3'>
-            <div className="card card-side  w-[90%] mx-auto bg-base-100 shadow-xl">
+        <div className='w-[90%] mx-auto  min-h-[500px] grid gap-3 md:grid-cols-2 lg:grid-cols-3'>
+            <div className="card card-side  bg-base-100 shadow-xl">
                 <figure>
                     <img
                         src="/ThomasImage.jpg"
@@ -16,7 +16,7 @@ const AuthorList = () => {
                     </div>
                 </div>
             </div>
-            <div className="card card-side w-[90%] mx-auto bg-base-100 shadow-xl">
+            <div className="card card-side  bg-base-100 shadow-xl">
                 <figure>
                     <img
                         src="/susanMedicine.jpg"
@@ -29,7 +29,7 @@ const AuthorList = () => {
                     </div>
                 </div>
             </div>
-            <div className="card card-side border-2  w-[90%] mx-auto bg-base-100 shadow-xl">
+            <div className="card card-side   bg-base-100 shadow-xl">
                 <figure>
                     <img
                         src="/paulo.jpg"
@@ -42,7 +42,7 @@ const AuthorList = () => {
                     </div>
                 </div>
             </div>
-            <div className="card card-side w-[90%] mx-auto bg-base-100 shadow-xl">
+            <div className="card card-side   bg-base-100 shadow-xl">
                 <figure>
                     <img
                         src="/banjamin.jpg"
