@@ -28,9 +28,9 @@ const Allbook = () => {
     }
     return (
         <div className='w-[90%] mx-auto min-h-screen'>
-            <div className='w-[100%] p-3 items-center border-2 border-white grid grid-cols-3 gap-2 '>
-                <div className=' h-[50px] border-0 rounded-lg bg-slate-300  text-white '>
-                    <button onClick={handelFilter} className='w-[100%] border-0  btn'>Filter quantity</button>
+            <div className='w-[100%] mt-2 mb-10 items-center grid grid-cols-3 gap-2 '>
+                <div className=' h-[50px] rounded-lg bg-slate-300  text-white '>
+                    <button onClick={handelFilter} className='w-[100%]  btn'>Filter quantity</button>
                 </div>
                 <div className=''>
                     <label className="input input-bordered flex items-center gap-2">
@@ -57,13 +57,13 @@ const Allbook = () => {
             </div>
 
 
-            <div className={`w-[100%] text-white my-2  gap-2  grid ${toggle && 'md:grid-cols-3 lg:grid-cols-4'}`}>
+            <div className={`w-[100%] text-white my-2  gap-4  grid ${toggle && 'md:grid-cols-3 lg:grid-cols-4'}`}>
                 {
                     books.map((book,index) => toggle ? <div key={book?._id} className="card h-[400px] card-compact bg-base-100 text-black shadow-xl">
                         <figure className='my-2'>
                             <img
                                 src={book?.image}
-                                alt="Shoes" className='w-[270px] h-[200px] rounded-lg' />
+                                alt="Shoes" className='w-[270px] h-[200px]  rounded-lg' />
                         </figure>
                         <div className="w-[90%] mx-auto">
                             <h2 className="card-title"><span className='text-xl font-medium'>Name:</span>{book?.name}</h2>

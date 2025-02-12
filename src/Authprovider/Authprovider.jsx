@@ -8,6 +8,7 @@ export const Authcontext=createContext()
 const Authprovider = ({children}) => {
     const [user,setuser]=useState([])
     const [loader,setloader]=useState(true)
+   
   const createRegister=(email,password)=>{
     setloader(true)
     return createUserWithEmailAndPassword(auth,email,password)
@@ -55,7 +56,7 @@ const Authprovider = ({children}) => {
        createLogin,
        user,
        loader,
-       singoutfun
+       singoutfun,
     }
     return (
         <Authcontext.Provider value={authinfo}>

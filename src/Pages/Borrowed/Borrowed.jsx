@@ -10,11 +10,10 @@ const Borrowed = () => {
     const{user}=useContext(Authcontext)
     const [books,setbooks]=useState([])
   
-    const axiosSecure=UseAxios()
+    const axiosSecure= UseAxios()
     useEffect(()=>{
      axiosSecure.get(`${import.meta.env.VITE_localhostUrl}/borrowedlist?user=${user?.email}`)
       .then(res=>{
-        
          setbooks(res.data)
       }) 
     },[user?.email])
