@@ -14,14 +14,14 @@ const Allbook = () => {
     const { _id, name, image, quantity, authorName, category, description, rating, bookcontent } = books
 
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_localhostUrl}/books?search=${search}`)
+        axios.get(`${import.meta.env.VITE_SERVERDEPLOYLINK}/books?search=${search}`)
             .then(res => {
                 setbook(res.data)
             })
     },[])
 
     const handelFilter = () => {
-        axios.get(`${import.meta.env.VITE_localhostUrl}/books/filter`)
+        axios.get(`${import.meta.env.VITE_SERVERDEPLOYLINK}/books/filter`)
             .then(res => {
                 setbook(res.data)
             })

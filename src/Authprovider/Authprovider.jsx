@@ -29,7 +29,7 @@ const Authprovider = ({children}) => {
         setloader(false)
         if(currentuser?.email){
           const userEmail={email:currentuser?.email}
-          axios.post(`${import.meta.env.VITE_localhostUrl}/jwt`,userEmail,{
+          axios.post(`${import.meta.env.VITE_SERVERDEPLOYLINK}/jwt`,userEmail,{
             withCredentials:true
           })
           .then(res=>{
@@ -38,7 +38,7 @@ const Authprovider = ({children}) => {
           })
         }
         else{
-          axios.post(`${import.meta.env.VITE_localhostUrl}/logout`,{},{
+          axios.post(`${import.meta.env.VITE_SERVERDEPLOYLINK}/logout`,{},{
             withCredentials:true
           }).then(res=>{
             console.log('logout',res.data)

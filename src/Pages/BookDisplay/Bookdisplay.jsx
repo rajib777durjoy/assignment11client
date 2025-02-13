@@ -6,7 +6,7 @@ const Bookdisplay = () => {
     const [books, setbooks] = useState([])
     const { category } = useParams()
     // console.log(category)
-    axios.get(`${import.meta.env.VITE_localhostUrl}/categorys/${category}`)
+    axios.get(`${import.meta.env.VITE_SERVERDEPLOYLINK}/categorys/${category}`)
         .then(res => {
             setbooks(res.data)
         })

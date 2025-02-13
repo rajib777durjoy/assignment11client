@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const instanceAxios = axios.create({
-    baseURL:import.meta.env.VITE_localhostUrl,
+    baseURL:import.meta.env.VITE_SERVERDEPLOYLINK,
     withCredentials:true
    
   });

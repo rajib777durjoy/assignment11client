@@ -12,14 +12,14 @@ const Borrowed = () => {
   
     const axiosSecure= UseAxios()
     useEffect(()=>{
-     axiosSecure.get(`${import.meta.env.VITE_localhostUrl}/borrowedlist?user=${user?.email}`)
+     axiosSecure.get(`${import.meta.env.VITE_SERVERDEPLOYLINK}/borrowedlist?user=${user?.email}`)
       .then(res=>{
          setbooks(res.data)
       }) 
     },[user?.email])
     const handelReturnfun=(id)=>{
        
-        fetch(`${import.meta.env.VITE_localhostUrl}/borrowedbook/${id}`,{
+        fetch(`${import.meta.env.VITE_SERVERDEPLOYLINK}/borrowedbook/${id}`,{
             method:'DELETE'
         })
         .then(res=>res.json())

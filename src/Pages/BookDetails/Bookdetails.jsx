@@ -16,7 +16,7 @@ const Bookdetails = () => {
     const {user}=useContext(Authcontext)
  
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_localhostUrl}/bookdetails/${id}`)
+        axios.get(`${import.meta.env.VITE_SERVERDEPLOYLINK}/bookdetails/${id}`)
             .then(res => {
                 setbookdetails(res.data)
             })
@@ -26,7 +26,7 @@ const Bookdetails = () => {
     const onSubmit = (event) => {
          // Form data will be logged here
         const data={...event,title:bookdetails?.name,image:bookdetails?.image,startDate,category:bookdetails?.category,bookId:bookdetails?._id,borrowdate:new Date()}
-        axios.post(`${import.meta.env.VITE_localhostUrl}/borrowedbook`,data)
+        axios.post(`${import.meta.env.VITE_SERVERDEPLOYLINK}/borrowedbook`,data)
         .then(res=>{
             console.log('submit successfull')
             document.getElementById('my_modal_5').close()

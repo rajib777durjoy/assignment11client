@@ -21,7 +21,7 @@ const handeladdbookinfo=(e)=>{
         return toast.error('rating number maximum 5')
     }
    
-    axiosInst.post(`${import.meta.env.VITE_localhostUrl}/addbook`,bookDetails)
+    axiosInst.post(`${import.meta.env.VITE_SERVERDEPLOYLINK}/addbook`,bookDetails)
     .then(res=>{
         console.log('add book',res)
         toast.success("Book Add Successfull")

@@ -9,7 +9,7 @@ const Updatepage = () => {
     const { _id, name, image, quantity, authorName, category, description, rating, bookcontent } = books
     console.log(id)
     useEffect(()=>{
-        axios.get(`${import.meta.env.VITE_localhostUrl}/updatebook/${id}`)
+        axios.get(`${import.meta.env.VITE_SERVERDEPLOYLINK}/updatebook/${id}`)
         .then(res=>{
             setbooks(res.data)
         })
@@ -20,7 +20,7 @@ const Updatepage = () => {
        const data=new FormData(e.target)
        const dataUpdate=Object.fromEntries(data.entries())
        console.log(dataUpdate)
-     fetch(`${import.meta.env.VITE_localhostUrl}/bookupdate/${books?._id}`,{
+     fetch(`${import.meta.env.VITE_SERVERDEPLOYLINK}/bookupdate/${books?._id}`,{
         method:'PUT',
         headers:{
             'Content-Type':'application/json'
